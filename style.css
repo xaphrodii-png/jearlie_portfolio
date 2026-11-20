@@ -1,0 +1,191 @@
+/* Basic styles for Jearlie Ben Pogoy's portfolio */
+:root {
+  --background: #fbfcfe;
+  --surface: #f1f4f8;
+  --text: #202a38;
+  --muted: #5e6b7b;
+  --accent: #234f91;
+  --border: #dce3ec;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--accent); }
+.container { width: min(100% - 40px, 960px); margin: 0 auto; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(251, 252, 254, 0.97);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 26px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .94rem;
+}
+.nav-links a:hover, .footer a:hover { color: var(--accent); }
+
+.section { padding: 82px 0; scroll-margin-top: 68px; }
+.hero { padding: 100px 0; }
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.hero-content { flex: 1; min-width: 0; }
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+h1, h2, h3, h4, p { margin-top: 0; }
+h1 {
+  max-width: 760px;
+  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 7vw, 4.6rem);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+.hero-subtitle { margin-bottom: 22px; color: var(--muted); font-size: 1.12rem; }
+.intro { max-width: 650px; margin-bottom: 28px; color: var(--muted); font-size: 1.08rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button-primary { background: var(--accent); color: var(--white); }
+.button-primary:hover { background: #193d72; color: var(--white); }
+.button-secondary { background: transparent; color: var(--accent); }
+.button-secondary:hover { background: #edf2f8; }
+
+/* Profile photo */
+.profile-container { flex: 0 0 260px; }
+.profile-picture {
+  display: block;
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--border);
+  border-radius: 8px;
+  background: #e8edf3;
+}
+
+.section-heading { margin-bottom: 26px; }
+.section-heading h2 { margin-bottom: 0; font-size: 2rem; letter-spacing: -.025em; }
+.about-copy { max-width: 760px; margin-bottom: 42px; color: var(--muted); font-size: 1.05rem; }
+.skills-heading { margin-bottom: 16px; }
+.skills-heading h3, .certificates h3 { margin-bottom: 0; font-size: 1.25rem; }
+.skills-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 34px; }
+.skill-item { padding: 20px 0; border-top: 1px solid var(--border); }
+.skill-item h4 { margin-bottom: 7px; font-size: 1.04rem; }
+.skill-item p { margin-bottom: 0; color: var(--muted); }
+
+.section-muted { background: var(--surface); }
+.project-list { border-top: 1px solid var(--border); }
+.project-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-number { padding-top: 3px; color: var(--accent); font-size: .88rem; font-weight: 700; }
+.project-item h3 { margin-bottom: 5px; font-size: 1.12rem; }
+.project-item p { max-width: 720px; margin-bottom: 0; color: var(--muted); }
+.project-item .project-type { margin-bottom: 6px; color: var(--accent); font-size: .86rem; font-weight: 600; }
+.certificates { margin-top: 48px; }
+.certificates ul { margin: 18px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+.certificates li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.certificate-org { color: var(--muted); text-align: right; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 55px; }
+.contact-details h3 { margin-bottom: 5px; font-size: 1.2rem; }
+.contact-details > p { color: var(--muted); }
+.contact-details dl { margin-top: 28px; }
+.contact-details dl div { margin-bottom: 16px; }
+.contact-details dt { color: var(--muted); font-size: .85rem; }
+.contact-details dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.contact-form { display: flex; flex-direction: column; align-items: stretch; }
+.contact-form label { margin: 0 0 6px; font-size: .92rem; font-weight: 600; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-bottom: 17px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #b7c9e2; border-color: var(--accent); }
+.contact-form textarea { resize: vertical; }
+.contact-form button { align-self: flex-start; }
+.small-note, .form-note { color: var(--muted); font-size: .84rem; }
+.form-note { margin: 12px 0 0; }
+
+.footer { padding: 22px 0; border-top: 1px solid var(--border); }
+.footer-content { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .9rem; }
+.footer-content p { margin: 0; }
+.footer a { text-decoration: none; }
+
+@media (max-width: 650px) {
+  .container { width: min(100% - 32px, 960px); }
+  .nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding: 13px 0; }
+  .nav-links { width: 100%; justify-content: space-between; gap: 12px; }
+  .nav-links a { font-size: .88rem; }
+  .section { padding: 62px 0; }
+  .hero { padding: 65px 0; }
+  .hero-layout { flex-direction: column-reverse; align-items: flex-start; gap: 30px; }
+  .profile-container { flex: none; }
+  .profile-picture { width: 190px; height: 220px; }
+  .skills-list, .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid { gap: 32px; }
+  .certificates li { flex-direction: column; gap: 2px; }
+  .certificate-org { text-align: left; }
+  .footer-content { flex-direction: column; gap: 5px; }
+}
